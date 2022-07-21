@@ -1,23 +1,7 @@
 import './App.css';
 import React from 'react';
-import Circle from './Circle';
-
-function TableList(props) {
-  const lists = props.listItems;
-  const listItems = lists.map((list,i) =>
-    <tr key={'key'+list.id}>
-      <td>{list.name}</td>
-      <td>{list.color}</td>
-      <td>
-        <button className='btn-edit mr-10' onClick={() => props.handleActionButtons(i, "update")}>Edit</button>
-        <button className='btn-delete mr-10' onClick={() => props.handleActionButtons(i, "delete")}>Delete</button>
-      </td>
-    </tr>
-  );
-  return (
-    listItems
-  );
-}
+import Circle from './components/Circle';
+import TableList from "./components/TableList";
 
 class App extends React.Component {
   constructor(props) {
@@ -192,20 +176,8 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col-50">
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Color</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <TableList listItems={this.state.tableList} handleActionButtons={this.handleActionButtons} />
-              </tbody>
-            </table>
+              <TableList listItems={this.state.tableList} handleActionButtons={this.handleActionButtons} />
           </div>
-
         </div>
       </div>
     )
