@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react';
-import Circle from './Circle';
 
 function TableList(props) {
   const lists = props.listItems;
@@ -18,7 +17,14 @@ function TableList(props) {
     listItems
   );
 }
-
+function Circle(props) {
+  //console.log({props});
+  return ( 
+      <div className="col-25">
+          <div className={props.cname}> {props.counter} </div>
+      </div>
+  );
+}
 class App extends React.Component {
   constructor(props) {
     super(props);
