@@ -59,7 +59,7 @@ class App extends React.Component {
 
     event.preventDefault();
     if (this.state.name.trim() === "" || this.state.color.trim() === "") {
-      alert("both fields are required");
+      alert("ALL fields are required");
       return false;
     }
 
